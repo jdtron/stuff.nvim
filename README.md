@@ -60,12 +60,12 @@ require("stuff").setup({
 
 | Option |  Type  | Description                             |
 |--------|--------|-----------------------------------------|
-| root   | string | Root directory containing your projects |
+| `root` | string | Root directory containing your projects |
 
 
 The projects module is enabled by providing a projects configuration table. The root option is required.
 
-Run require("stuff.projects").select() to open the project picker.
+Run `require("stuff.projects").select()` to open the project picker.
 
 The picker uses telescope to display the immediate subdirectories of the configured root.
 Selecting a regular directory changes Neovim's working directory to it and sets the terminal title to the directory's name.
@@ -75,7 +75,7 @@ Selecting a regular directory changes Neovim's working directory to it and sets 
 A directory containing a .workspace file is treated as a workspace rather than a regular project. Selecting it opens another picker showing its immediate subdirectories.
 
 For example:
-
+```
 ~/Projects/
 ├── personal/
 │   ├── .workspace
@@ -86,6 +86,7 @@ For example:
 │   ├── backend/
 │   └── frontend/
 └── playground/
+```
 
 
 Selecting personal or work opens the corresponding nested project list. Selecting a directory inside one of those workspaces changes the working directory to that project.
@@ -137,11 +138,11 @@ Missing or unsupported paths produce a warning notification.
 
 The modules can also be invoked directly:
 
--- Open the project picker
-require("stuff.projects").select()
+- Open the project picker  
+  `require("stuff.projects").select()`
 
--- Open the bookmark picker
-require("stuff.bookmarks").select()
+- Open the bookmark picker  
+  `require("stuff.bookmarks").select()`
 
--- Edit the bookmarks list
-require("stuff.bookmarks").edit()
+- Edit the bookmarks list  
+  `require("stuff.bookmarks").edit()`
